@@ -61,8 +61,8 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - MLFLOW_AUTH_CONFIG_PATH=/var/lib/mlflow/mlflow-auth/basic-auth.ini
-    volumes:
-      - ./mlflow-auth:/var/lib/mlflow/mlflow-auth
+      - MLFLOW_TRACKING_USERNAME=${MLFLOW_TRACKING_USERNAME}
+      - MLFLOW_TRACKING_PASSWORD=${MLFLOW_TRACKING_USERNAME}
     command: >
       mlflow server
         --backend-store-uri mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE}
