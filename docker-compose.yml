@@ -65,6 +65,7 @@ services:
       - GUNICORN_CMD_ARGS=--timeout 120
     volumes:
       - ./basic-auth.ini:/var/lib/mlflow/mlflow-auth/basic-auth.ini
+      - ./mlflow-auth:/var/lib/mlflow/mlflow-auth
     command: >
       mlflow server
         --backend-store-uri mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE}
