@@ -62,6 +62,7 @@ services:
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - MLFLOW_AUTH_CONFIG_PATH=/var/lib/mlflow/mlflow-auth/basic-auth.ini
       - MLFLOW_FLASK_SERVER_SECRET_KEY=${MLFLOW_FLASK_SERVER_SECRET_KEY}
+      - GUNICORN_CMD_ARGS=--timeout 120
     volumes:
       - ./basic-auth.ini:/var/lib/mlflow/mlflow-auth/basic-auth.ini
     command: >
