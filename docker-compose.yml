@@ -64,7 +64,6 @@ services:
       - MLFLOW_FLASK_SERVER_SECRET_KEY=${MLFLOW_FLASK_SERVER_SECRET_KEY}
       - GUNICORN_CMD_ARGS=--timeout 120
     volumes:
-      - ./basic-auth.ini:/var/lib/mlflow/mlflow-auth/basic-auth.ini
       - ./mlflow-auth:/var/lib/mlflow/mlflow-auth
     command: >
       mlflow server
